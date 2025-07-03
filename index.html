@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hours Completed Counter</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h2 {
+      font-weight: 500;
+      font-size: 1.3em;
+    }
+
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    #counter {
+      font-size: 2em;
+      min-width: 60px;
+    }
+
+    button {
+      font-size: 2em;
+      padding: 8px 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: inherit;
+    }
+
+    button:active {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hours Completed</h2>
+  <div class="counter-container">
+    <button onclick="changeCounter(-1.5)">-</button>
+    <div id="counter">0</div>
+    <button onclick="changeCounter(1.5)">+</button>
+  </div>
+
+  <script>
+    let value = 0;
+    const counter = document.getElementById('counter');
+
+    function changeCounter(amount) {
+      value = Math.round((value + amount) * 10) / 10;
+      counter.textContent = value;
+    }
+  </script>
+
+</body>
+</html>
